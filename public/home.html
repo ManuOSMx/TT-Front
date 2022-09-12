@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Transitus</title>
+    <meta name="theme-color" content="#dbf2fc">
+    <meta name="" content="">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/manifest-icon-192.maskable.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/manifest-icon-192.maskable.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/manifest-icon-192.maskable.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/manifest-icon-192.maskable.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/manifest-icon-512.maskable.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="assets/css/Navbar-With-Button.css">
+    <link rel="stylesheet" href="assets/css/Team-Horizontal.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" rel="stylesheet" />
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+
+    <script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
+</head>
+
+<body onload="GetMap()"><div>
+<div class="tm-site-header tm-mb-1 tm-bg-color-1">
+    <nav class="tm-site-name-container">
+      <img src="./img/MLSA.png" alt="MLSA" />
+    </nav>
+    <div class="tm-nav-container">
+      <nav class="tm-nav" id="tm-nav">
+        <ul>
+          <li class="tm-nav-item">
+            <a
+              href="https://github.com/ManuOSMx/MLSA-TalentRoute"
+              target="_blank"
+              class="tm-nav-link"
+            >
+              <span>Código</span>
+            </a>
+          </li>
+          <li class="tm-nav-item">
+            <a
+              href="https://manuos.codes/MLSA-TalentRoute/"
+              target="_blank"
+              class="tm-nav-link"
+            >
+              <span>Instruc.</span>
+            </a>
+          </li>
+          <li class="tm-nav-item">
+            <a
+              href="http://portal.azure.com"
+              target="_blank"
+              class="tm-nav-link"
+            >
+              <span>Azure</span>
+            </a>
+          </li>
+          <li class="tm-nav-item">
+            <a
+              href="https://docs.microsoft.com/es-mx/"
+              target="_blank"
+              class="tm-nav-link"
+            >
+              <span>Docs</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    </div>
+    <section class="tm-mb-1" id="about">
+    <div class="tm-row tm-about-row">
+      <article class="tm-section-1-l tm-bg-color-7">
+        <div style="color: aliceblue">
+          <strong>Búsqueda:</strong> Dirección
+          <input
+            type="radio"
+            value="address"
+            name="searchTypeGroup"
+            checked="checked"
+          />
+        </div>
+        <br />
+
+        <strong>País:</strong>
+        <select id="countrySelector">
+          <option value="MX">Mexico</option>
+        </select>
+        <br /><br />
+
+        <div class="ui-widget">
+          <label for="queryTbx"><strong>Dirección Origen:</strong></label>
+          <input id="queryTbx" />
+        </div>
+        <br />
+        <form oninput="alts.value=alternatives.value">
+          <strong>Rutas Alternativas:</strong>
+          <output id="alts" for="alternatives">1</output>
+          <br />
+          <input
+            id="alternatives"
+            type="range"
+            value="1"
+            step="1"
+            min="0"
+            max="5"
+            onchange="calculateRoute()"
+          />
+        </form>
+
+        <strong>Tipo de Ruta:</strong>
+
+        <select id="alternativeType" onchange="calculateRoute()">
+          <option value="anyRoute" selected="selected">
+            Cualquier Ruta
+          </option>
+          <option value="betterRoute">Mejor Ruta</option>
+        </select>
+
+        <br /><br />
+
+        <form oninput="mdt.value=minDevTime.value">
+          <strong>Min. Tiempo en desviación (s):</strong>
+          <output id="mdt" for="minDevTime">0</output>
+          <br />
+          <input
+            id="minDevTime"
+            type="range"
+            value="0"
+            step="1"
+            min="0"
+            max="1000"
+            onchange="calculateRoute()"
+          />
+        </form>
+
+        <form oninput="mdd.value=minDevDistance.value">
+          <strong>Min. Distancia en desviación (m):</strong>
+          <output id="mdd" for="minDevDistance">0</output>
+          <br />
+          <input
+            id="minDevDistance"
+            type="range"
+            value="0"
+            step="100"
+            min="0"
+            max="5000"
+            onchange="calculateRoute()"
+          />
+        </form>
+        <div id="resultsPanel"></div>
+      </article>
+      <div class="tm-section-1-r">
+        <div
+          id="myMap"
+          style="
+            position: relative;
+            width: 100%;
+            min-width: 290px;
+            height: 600px;
+          "
+        ></div>
+      </div>
+    </div>
+    </section>
+
+    <footer class="text-center tm-mb-1">
+    Proyecto creado para Talent Land 2022.
+    </footer>
+
+</div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/swinit.js"></script>
+</body>
+
+</html>
