@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Transitus</title>
+    <meta name="theme-color" content="#dbf2fc">
+    <meta name="" content="">
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="assets/img/apple-icon-180.png">
+    <link rel="icon" type="image/png" sizes="180x180" href="assets/img/apple-icon-180.png">
+    <link rel="icon" type="image/png" sizes="180x180" href="assets/img/apple-icon-180.png">
+    <link rel="icon" type="image/png" sizes="180x180" href="assets/img/apple-icon-180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/manifest-icon-192.maskable.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/manifest-icon-512.maskable.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Account-setting-or-edit-profile.css">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/Navbar-With-Button.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer-.css">
+    <link rel="stylesheet" href="assets/css/Section-Wrapper.css">
+    <link rel="stylesheet" href="assets/css/Team-Horizontal.css">
+<link href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" rel="stylesheet" />
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#myModal").modal('show');
+	});
+</script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md py-3">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="home.html"><span>Transitus</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#section-about">Acerca de nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link link-primary" href="home.html">Nuevo viaje</a></li>
+                </ul><a class="btn btn-light d-flex justify-content-center align-items-center" role="button" href="user_data_session.html" onclick="window.location.reload()">Mi sesión</a><a class="btn btn-primary d-flex justify-content-center align-items-center" role="button" href="bye.html">Salir</a>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                    <li class="nav-item"><a class="nav-link active" id="item-1-1-tab" role="tab" aria-controls="item-1-1" aria-selected="true" href="#item-1-1" data-bs-toggle="tab">Información personal</a></li>
+                    <li class="nav-item"><a class="nav-link" id="item-1-2-tab" role="tab" aria-controls="item-1-2" aria-selected="false" href="#item-1-2" data-bs-toggle="tab">Tus viajes</a></li>
+                    <li class="nav-item"><a class="nav-link" id="item-1-3-tab" role="tab" aria-controls="item-1-3" aria-selected="false" href="#item-1-3" data-bs-toggle="tab">Cambio de contraseña</a></li>
+                    <li class="nav-item"><a class="nav-link" id="item-1-4-tab" role="tab" aria-controls="item-1-4" aria-selected="false" href="#item-1-4" data-bs-toggle="tab">Eliminar cuenta</a></li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div id="nav-tabContent" class="tab-content">
+                    <div id="item-1-1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="item-1-1-tab">
+                        <div class="container">
+                            <div class="row gutters">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <div class="account-settings">
+                                                <div class="user-profile">
+                                                    <div class="user-avatar"><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin"></div>
+                                                    <h5 class="user-name">label-nombre</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <div class="row gutters">
+                                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                    <h6 class="text-primary mb-2">Información general</h6>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                                    <div class="form-group"><label class="form-label" for="user-nombre-form">Nombre</label><input type="text" class="form-control" id="user-nombre-form"></div>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                                    <div class="form-group"><label class="form-label" for="user-apellidos-form">Apellidos</label><input type="text" class="form-control" id="user-apellidos-form"></div>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                                    <div class="form-group"><label class="form-label" for="eMail">Correo electrónico</label><input type="email" class="form-control" id="user-email-form"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row gutters">
+                                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                    <div class="text-right"><button class="btn btn-primary" type="button" id="submit" name="submit"> Actualizar información</button></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="item-1-2" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-2-tab">
+                        <div id="info-viajes"></div>
+                    </div>
+                    <div id="item-1-3" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-3-tab">
+                        <div id="change-pass">
+                            <section class="position-relative py-4 py-xl-5" style="padding-bottom: 14px;">
+                                <div class="container position-relative">
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-md-12 col-lg-9 col-xl-8 col-xxl-7">
+                                            <div class="card mb-5">
+                                                <div class="card-body p-sm-5">
+                                                    <form method="post">
+                                                        <div class="mb-3"><input class="form-control form-control" type="password" id="actual_pass" name="actual_pass" placeholder="Tu contraseña actual"></div>
+                                                        <div class="mb-3"><input class="form-control form-control" type="password" id="new_pass" name="new_pass" placeholder="Tu contraseña nueva"></div>
+                                                        <div class="mb-3"><input class="form-control form-control" type="password" id="rep_new_pass" name="rep_new_pass" placeholder="Repite tu nueva contraseña"></div>
+                                                        <div><button class="btn btn-primary d-block w-100" id="change_pass" type="submit"> Cambiar contraseña </button></div>
+                                                        <p id="response-change-pass"></p>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div id="item-1-4" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-3-tab"><div id="delete-account">
+  <div>
+    <p class="text-danger">
+      <small>
+        Al eliminar tu cuenta, se eliminarán todos tus datos y no podrás
+        recuperarlos.
+      </small>
+    </p>
+  </div>
+  <div>
+    <button
+      id="delete_account"
+      class="btn btn-danger d-block w-100"
+      type="button"
+      href="#item-1-4"
+    >
+      Eliminar cuenta
+    </button>
+  </div>
+</div>
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 footer-navigation">
+                <h3><a href="index.html">Transitus</a></h3>
+                <p class="links"><a href="index.html">Home</a><strong> ·&nbsp;</strong><a href="index.html">About</a><strong> · </strong><a href="#">Faq</a><strong> · </strong><a href="#section-about">Contact</a></p>
+                <p class="company-name">Transitus © 2022</p>
+            </div>
+            <div class="col-md-4 footer-about">
+                <h4>About the company</h4>
+                <p> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet. </p>
+                <div class="social-links social-icons"><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/mapa_viaje.js"></script>
+    <script src="assets/js/mapa_zona.js"></script>
+    <script src="assets/js/popup.js"></script>
+    <script src="assets/js/swinit.js"></script>
+</body>
+
+</html>

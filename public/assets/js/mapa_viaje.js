@@ -23,12 +23,13 @@ var routeColors = [
 
 function GetMap() {
   //Inicializar el mapa
-  map = new atlas.Map("myMap", {
+  map = new atlas.Map("tripMap", {
+    //Expo Guadalajara
     center: [-100.38806, 20.58806],
     zoom: 15,
     view: "Auto",
 
-    //Add authentication details for connecting to Azure Maps.
+    //Add authentication details fo5r connecting to Azure Maps.
     authOptions: {
       //Alternatively, use an Azure Maps key. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
       authType: "subscriptionKey",
@@ -64,19 +65,6 @@ function GetMap() {
       "labels"
     );
 
-    map.layers.add(
-      new atlas.layer.SymbolLayer(datasource, null, {
-        iconOptions: {
-          image: "pin-round-blue",
-          anchor: "center",
-          allowOverlap: true,
-        },
-        textOptions: {
-          anchor: "top",
-        },
-      })
-    );
-
     //Create a layer for rendering the start and end points of the route as symbols.
     map.layers.add(
       new atlas.layer.SymbolLayer(datasource, null, {
@@ -91,16 +79,7 @@ function GetMap() {
         ], //Only render Point or MultiPoints in this layer.
       })
     );
-
-    var pipeline = atlas.service.MapsURL.newPipeline(
-      new atlas.service.MapControlCredential(map)
-    );
-    var searchURL = new atlas.service.SearchURL(pipeline);
     //Create a jQuery autocomplete UI widget.
-
-    var query = "café";
-    var radius = 9000;
-    /*
     $("#queryTbx")
       .autocomplete({
         minLength: 3, //Don't ask for suggestions until atleast 3 characters have been typed. This will reduce costs by not making requests that will likely not have much relevance.
@@ -168,65 +147,9 @@ function GetMap() {
       return $("<li>")
         .append("<a>" + suggestionLabel + "</a>")
         .appendTo(ul);
-      };
-    */
-    var query = "gasoline-station";
-    var radius = 9000;
-    var lat = 47.64452336193245;
-    var lon = -122.13687658309935;
-
-    searchURL
-      .searchPOI(atlas.service.Aborter.timeout(10000), query, {
-        limit: 10,
-        lat: lat,
-        lon: lon,
-        radius: radius,
-        view: "Auto",
-      })
-      .then((results) => {
-        // Extract GeoJSON feature collection from the response and add it to the datasource
-        var data = results.geojson.getFeatures();
-        datasource.add(data);
-
-        // set camera to bounds to show the results
-        map.setCamera({
-          bounds: data.bbox,
-          zoom: 10,
-          padding: 15,
-        });
-      });
+    };
   });
-  // Create a popup but leave it closed so we can update it and display it later.
-  popup = new atlas.Popup();
-
-  //Add a mouse over event to the result layer and display a popup when this event fires.
-  map.events.add("mouseover", resultLayer, showPopup);
-
-  function showPopup(e) {
-    //Get the properties and coordinates of the first shape that the event occurred on.
-
-    var p = e.shapes[0].getProperties();
-    var position = e.shapes[0].getCoordinates();
-
-    //Create HTML from properties of the selected result.
-    var html = `
-      <div style="padding:5px">
-        <div><b>${p.poi.name}</b></div>
-        <div>${p.address.freeformAddress}</div>
-        <div>${position[1]}, ${position[0]}</div>
-      </div>`;
-
-    //Update the content and position of the popup.
-    popup.setPopupOptions({
-      content: html,
-      position: position,
-    });
-
-    //Open the popup.
-    popup.open(map);
-  }
 }
-
 function processRequest(url) {
   //This is a reusable function that sets the Azure Maps platform domain, sings the request, and makes use of any transformRequest set on the map.
   return new Promise((resolve, reject) => {
@@ -265,8 +188,8 @@ function calculateRoute() {
 
   //Create the GeoJSON objects which represent the start and end points of the route and add to data source.
   datasource.add([
-    new atlas.data.Feature(new atlas.data.Point(start), { title: "Start" }),
-    new atlas.data.Feature(new atlas.data.Point(end), { title: "End" }),
+    new atlas.data.Feature(new atlas.data.Point(start), { title: "Inicio" }),
+    new atlas.data.Feature(new atlas.data.Point(end), { title: "Final" }),
   ]);
 
   //Get the coordnates of the start and end points.
