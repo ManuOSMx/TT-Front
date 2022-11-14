@@ -15,9 +15,24 @@
     <link rel="icon" type="image/png" sizes="512x512" href="assets/img/manifest-icon-512.maskable.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Account-setting-or-edit-profile.css">
+    <link rel="stylesheet" href="assets/css/estilos.css">
     <link rel="stylesheet" href="assets/css/Navbar-With-Button.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer-.css">
+    <link rel="stylesheet" href="assets/css/Section-Wrapper.css">
     <link rel="stylesheet" href="assets/css/Team-Horizontal.css">
-<link rel="apple-touch-icon" href="assets/img/icons/apple-icon-180.png">
+<link href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" rel="stylesheet" />
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#myModal").modal('show');
+	});
+</script><link rel="apple-touch-icon" href="assets/img/icons/apple-icon-180.png">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -64,18 +79,18 @@
     <section id="section-intro">
         <div>
             <div class="text-center d-flex d-lg-flex flex-column justify-content-center align-items-center justify-content-lg-center align-items-lg-center" style="padding: 10px;margin: 0px;">
-                <h1 class="display-1 fw-bold">Querétaro te espera con todos sus atractivos</h1>
+                <h1 class="fw-bold text-center">Querétaro te espera con todos sus atractivos</h1>
                 <p class="fs-5">¿Cuál es tu siguiente destino?<br></p><a class="btn btn-primary" role="button" href="login.html">Empieza a visitar Querétaro</a>
             </div>
         </div>
     </section>
     <section id="section-info">
         <div>
-            <div class="d-xl-flex flex-column justify-content-xl-center align-items-xl-center">
-                <h1 class="display-3 fw-normal text-center" style="padding: 17px;">¿Dónde está Querétaro?</h1><img class="img-fluid d-xl-flex flex-row justify-content-xl-center align-items-xl-center" src="assets/img/Mexico_states_querétaro.png">
+            <div class="text-center flex-column justify-content-xl-center align-items-xl-center">
+                <h1 class="text-center" style="padding: 17px;">¿Dónde está Querétaro?</h1><img class="img-fluid flex-row justify-content-xl-center align-items-xl-center" src="assets/img/Mexico_states_querétaro.png">
             </div>
-            <div>
-                <h1 class="display-2 fw-lighter text-center" style="margin-top: 20px;">Los atractivos de Querétaro</h1>
+            <div class="flex-column justify-content-xl-center align-items-xl-center">
+                <h1 class="fw-lighter text-center" style="padding: 17px;">Los atractivos de Querétaro</h1>
             </div>
         </div>
     </section>
@@ -135,10 +150,7 @@
                                                 </svg></a></div>
                                     </li>
                                     <li class="list-inline-item text-center">
-                                        <div class="d-flex flex-column align-items-center"><a href="https://manuos.codes"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-clouds-fill">
-                                                    <path d="M11.473 9a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 14h8.5a2.5 2.5 0 1 0-.027-5z"></path>
-                                                    <path d="M14.544 9.772a3.506 3.506 0 0 0-2.225-1.676 5.502 5.502 0 0 0-6.337-4.002 4.002 4.002 0 0 1 7.392.91 2.5 2.5 0 0 1 1.17 4.769z"></path>
-                                                </svg></a></div>
+                                        <div class="d-flex flex-column align-items-center"><a href="https://manuos.codes"></a></div>
                                     </li>
                                 </ul>
                             </div>
@@ -169,8 +181,24 @@
             </div>
         </div>
     </section>
+    <footer>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 footer-navigation">
+                <h3 class="display-3 font-monospace"><a class="text-start" href="index.html">Transitus</a></h3>
+                <p class="links"><a href="index.html">Home</a><strong> ·&nbsp;</strong><a href="index.html">About</a><strong> · </strong><a href="#">Faq</a><strong> · </strong><a href="#section-about">Contact</a></p>
+                <p class="company-name">Transitus © 2022</p>
+            </div>
+            <div class="col-md-4 footer-about">
+                <h4>About the company</h4>
+                <p> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet. </p>
+                <div class="social-links social-icons"><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+            </div>
+        </div>
+    </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/mapa_viaje.js"></script>
+    <script src="assets/js/mapa_zona.js"></script>
+    <script src="assets/js/popup.js"></script>
     <script src="assets/js/swinit.js"></script>
 </body>
 

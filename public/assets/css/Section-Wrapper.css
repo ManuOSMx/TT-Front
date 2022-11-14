@@ -1,0 +1,12 @@
+.section {
+  background-color: var(--bs-gray);
+  height: 100vh;
+}
+
+.section-wrapper {
+  background-color: var(--bs-gray-dark);
+  max-width: 80%;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
