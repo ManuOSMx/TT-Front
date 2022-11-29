@@ -1,4 +1,4 @@
-const API = "http://127.0.0.1:5000/map-api";
+const API = "https://tt-api-server.azurewebsites.net/map-api";
 
 var markersPlaces = [];
 /* Define async function */
