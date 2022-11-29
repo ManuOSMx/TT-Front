@@ -36,37 +36,36 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md py-3">
+    <nav class="navbar navbar-light navbar-expand-md py-3" style="position: relative;z-index: 999;background: #ffffff;">
         <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span>Transitus</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">¿Cómo usarlo?</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#section-info">Info. Querétaro</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#section-about">Acerca de nosotros</a></li>
-                </ul><a class="btn btn-light d-flex justify-content-center align-items-center" role="button" href="login.html">Inicia sesión</a><a class="btn btn-primary d-flex justify-content-center align-items-center" role="button" href="signup.html">Registrate</a>
+                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link link-success" href="user_data_session.html">Mis viajes</a></li>
+                    <li class="nav-item"><a class="nav-link link-info" href="user_data_session.html">Cuenta</a></li>
+                    <li class="nav-item"><a class="nav-link link-primary" href="new_trip.html" onclick="window.location.reload()">Nuevo Viaje</a></li>
+                </ul><a class="btn d-flex justify-content-center align-items-center" role="button" href="bye.html">Salir</a>
             </div>
         </div>
     </nav>
-    <div class="d-flex flex-column justify-content-center align-items-center" style="text-align: center;">
-        <h1 style="padding: 10px;">¿Olvidaste la contraseña?</h1>
-        <p>A continuación escribe el email con el que te registraste para restablecer la contraseña</p>
+    <div class="text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center">
+        <h1 class="text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center">¡Ayudanos publicando un Twitter!<br></h1><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-send-check" style="font-size: 300px;">
+            <path fill-rule="evenodd" d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855a.75.75 0 0 0-.124 1.329l4.995 3.178 1.531 2.406a.5.5 0 0 0 .844-.536L6.637 10.07l7.494-7.494-1.895 4.738a.5.5 0 1 0 .928.372l2.8-7Zm-2.54 1.183L5.93 9.363 1.591 6.602l11.833-4.733ZM16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.993-1.679a.5.5 0 0 1 .172.686l-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 0 1 .686-.172Z"></path>
+        </svg><div id="button_twitter">
+  <a
+    href="https://twitter.com/intent/tweet?button_hashtag=ttpenadebernal&ref_src=twsrc%5Etfw"
+    class="twitter-hashtag-button"
+    data-size="large"
+    data-text="Este lugar me pareció ..."
+    data-url="https://tt-api-server.azurewebsites.net/"
+    data-lang="es"
+    data-dnt="true"
+    data-show-count="false"
+    >Tweet #ttpenadebernal</a
+  >
+</div>
+
     </div>
-    <section class="position-relative py-4 py-xl-5" style="padding-bottom: 14px;">
-        <div class="container position-relative">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-12 col-lg-9 col-xl-8 col-xxl-7">
-                    <div class="card mb-5">
-                        <div class="card-body p-sm-5"><form method="post" onsubmit="forgot()">
-    <div class="mb-3"><input id="forgot-email" class="form-control" type="email" name="forgot-email" placeholder="Correo electrónico" /></div>
-    <div><button id="reg-btn" class="btn btn-primary d-block w-100" type="submit">Recuperar contraseña</button>
-    </div>
-</form></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div id="response-forgot-email"></div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/azure-maps-geolocation-control.js"></script>
     <script src="assets/js/mapa_viaje.js"></script>
